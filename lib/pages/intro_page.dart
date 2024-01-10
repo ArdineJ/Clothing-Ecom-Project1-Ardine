@@ -65,7 +65,7 @@ class IntroPage extends StatelessWidget {
                         fontSize: 16,
                         ),
                     ) 
-                    ),
+                  ),
                 ),
               )
             ],

@@ -42,7 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               SizedBox(height: 8),
               Text(
-                'Joined on: January 10, 2024',
+                'Created on: January 9, 2024',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,

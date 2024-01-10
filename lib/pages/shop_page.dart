@@ -5,6 +5,7 @@ import '../components/clothes_tile.dart';
 import '../components/trending_tile.dart';
 import '../models/cart.dart';
 import '../models/clothes.dart';
+import 'detail_page.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({Key? key}) : super(key: key);
@@ -30,6 +31,16 @@ class _ShopPageState extends State<ShopPage> {
       ),
     );
   }
+
+  void toDetail(Clothes clothes) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailPage(clothes: clothes),
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +125,7 @@ class _ShopPageState extends State<ShopPage> {
                       fontWeight: FontWeight.bold,
                       color: Colors.blue,
                     ),
-                  ),                  
+                  ),
                 ],
               ),
             ),
@@ -189,6 +200,7 @@ class _ShopPageState extends State<ShopPage> {
                       Clothes clothes = value.getClothesList()[index];
                       return ClothesTile(
                         clothes: clothes,
+                        onTapDetail: () => toDetail(clothes),
                         onTap: () => addItemToCart(clothes),
                       );
                     },
