@@ -17,16 +17,22 @@ class MyBottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         onTabChange: (value) => onTabChange!(value),
         tabs: const[
-        GButton(
-          icon: Icons.shopping_cart,
-          text: 'Shop',
-        ),
-        
-        GButton(
-          icon: Icons.shopping_bag_rounded,
-          text: 'Cart', 
-        )
-      ],),
+          GButton(
+            icon: Icons.shopping_cart,
+            text: 'Shop',
+          ),
+          
+          GButton(
+            icon: Icons.shopping_bag_rounded,
+            text: 'Cart', 
+          ),
+
+          GButton(
+            icon: Icons.account_circle,
+            text: 'Profile', 
+          ),
+        ],
+      ),
     );
   }
 }
