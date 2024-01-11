@@ -36,7 +36,7 @@ class DummyData {
       Clothes(
         name: 'Baju 6',
         price: '600',
-        description: 'Baju 6 lebih bagus dari baju 5',
+        description: 'Baju 6 lebih bagus dari baju 5asdasdsasdsaadasasdasdsad',
         image: 'lib/images/6.jpg',
       ),
       Clothes(

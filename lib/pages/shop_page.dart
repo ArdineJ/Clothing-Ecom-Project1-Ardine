@@ -136,11 +136,12 @@ class _ShopPageState extends State<ShopPage> {
             SizedBox(
               height: 200, 
               child: ListView.builder(
-                itemCount: 5,
+                
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   Clothes clothes = value.getClothesList()[index];
                   return TrendingTile(
+                    onTapDetail: () => toDetail(clothes),
                     clothes: clothes,
                   );
                 },
@@ -151,9 +152,9 @@ class _ShopPageState extends State<ShopPage> {
 
             // clothes stock
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.only(left: 25, right: 25, bottom: 25),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -184,10 +185,8 @@ class _ShopPageState extends State<ShopPage> {
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 8.0,
-                      mainAxisSpacing:
-                          8.0, 
-                      childAspectRatio:
-                          0.6, 
+                      mainAxisSpacing: 15.0, 
+                      childAspectRatio: 0.571, 
                     ),
                     itemCount: 10, 
                     itemBuilder: (context, index) {
@@ -205,6 +204,8 @@ class _ShopPageState extends State<ShopPage> {
                       );
                     },
                   ),
+
+
                 ],
               ),
             ),

@@ -10,7 +10,7 @@ class Cart extends ChangeNotifier {
   // items in user cart
   List<Clothes> userCart = [];
 
-  List<String> clothingCategory = ["Jackets", "Dressers", "Hoodies", "T-shirt", "Shirt" ];
+  // List<String> clothingCategory = ["Jackets", "Dressers", "Hoodies", "T-shirt", "Shirt" ];
 
   // get the list of items for sale
   List<Clothes> getClothesList() {
