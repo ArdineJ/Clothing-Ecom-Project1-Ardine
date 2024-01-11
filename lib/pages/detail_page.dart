@@ -75,7 +75,7 @@ class BottomSheetWidget extends StatelessWidget {
       bottom: 0,
       left: 0,
       child: Container(
-        height: MediaQuery.of(context).size.height / 3,
+        height: MediaQuery.of(context).size.height / 2.5,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -127,7 +127,18 @@ class BottomSheetWidget extends StatelessWidget {
               Text(
                 'Size',
                 style: TextStyle(
-                  color: Colors.black.withOpacity(.8),
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+              ),
+              Container(
+                height: 1,
+                width: 50,
+                margin: EdgeInsets.only(bottom: 10),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(3),
                 ),
               ),
               const SizedBox(height: 10),
@@ -152,6 +163,7 @@ class BottomSheetWidget extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
+                          fontSize: 16,
                         ),
                       ),
                       Container(
@@ -188,7 +200,7 @@ class BottomSheetWidget extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                          fontSize: 16,
                         ),
                       ),
                     ),
@@ -217,10 +229,10 @@ class RectBtnSelected extends StatelessWidget {
       height: 32,
       width: 32,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(9),
+        borderRadius: BorderRadius.circular(30),
         color: Colors.black,
       ),
-      child: Center(child: Text(label, style: TextStyle(color: Colors.white))),
+      child: Center(child: Text(label, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white))),
     );
   }
 }
@@ -239,13 +251,13 @@ class RectBtn extends StatelessWidget {
       height: 32,
       width: 32,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(9),
+        borderRadius: BorderRadius.circular(30),
         border: Border.all(color: Colors.black),
       ),
       child: Center(
         child: Text(
           label,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(fontWeight: FontWeight.bold ,color: Colors.black),
         ),
       ),
     );

@@ -36,7 +36,7 @@ class _ShopPageState extends State<ShopPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => DetailPage(clothes: clothes),
+        builder: (context) => DetailPage(clothes: clothes,),
       ),
     );
   }
@@ -82,28 +82,24 @@ class _ShopPageState extends State<ShopPage> {
               ),
             ),
 
-
-            const SizedBox(height: 25),
+            const SizedBox(height: 20),
 
             // category clothes
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Container(
-            //     height: 30,
-            //     child: ListView.builder(
-            //       itemCount: value.clothingTypes.length,
-            //       scrollDirection: Axis.horizontal,
-            //       itemBuilder: (context, index) {
-            //         return Padding(
-            //           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            //           child: ElevatedButton(
-              
-            //       },
-            //     ),
-            //   ),
-            // ),
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: const Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.center,
+                children: [
+                  RectBtnSelected(label: 'Shirt'),
+                  RectBtn(label: 'T-Shirt'),
+                  RectBtn(label: 'Jacket'),
+                  RectBtn(label: 'Hoodie'),
+                ],
+              ),
+            ),
 
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
 
             // trending
             const Padding(
@@ -136,7 +132,7 @@ class _ShopPageState extends State<ShopPage> {
             SizedBox(
               height: 200, 
               child: ListView.builder(
-                
+                itemCount: 5, 
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   Clothes clothes = value.getClothesList()[index];
@@ -154,7 +150,6 @@ class _ShopPageState extends State<ShopPage> {
             Padding(
               padding: EdgeInsets.only(left: 25, right: 25, bottom: 25),
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -190,12 +185,6 @@ class _ShopPageState extends State<ShopPage> {
                     ),
                     itemCount: 10, 
                     itemBuilder: (context, index) {
-                      // return Container(
-                      //   color: Colors.grey[200],
-                      //   child: Center(
-                      //     child: Text('Item $index'),
-                      //   ),
-                      // );
                       Clothes clothes = value.getClothesList()[index];
                       return ClothesTile(
                         clothes: clothes,
@@ -204,12 +193,58 @@ class _ShopPageState extends State<ShopPage> {
                       );
                     },
                   ),
-
-
                 ],
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class RectBtnSelected extends StatelessWidget {
+  final String label;
+  const RectBtnSelected({
+    super.key,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 7, horizontal: 20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(width: 2, color: Colors.black),
+        color: Colors.black,
+      ),
+      child: Center(child: Text(label, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white))),
+    );
+  }
+}
+
+class RectBtn extends StatelessWidget {
+  final String label;
+  const RectBtn({
+    super.key,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 7, horizontal:20 ),
+      margin: EdgeInsets.only(left: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(width: 1, color: Colors.black),
+      ),
+      child: Center(
+        child: Text(
+          label,
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
       ),
     );
